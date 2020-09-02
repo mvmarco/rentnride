@@ -12,13 +12,8 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign in", new_user_session_path %>
-    <% end %>
+    <%= render 'shared/navbar' %>
     <%= yield %>
-    <%= render 'layouts/footer' %>
-    
+    <%= render 'shared/footer' %>
   </body>
 </html>
