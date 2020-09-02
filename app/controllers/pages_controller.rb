@@ -3,3 +3,5 @@ class PagesController < ApplicationController
     @home = true
   end
 end
+
+# this is just for commit - test
