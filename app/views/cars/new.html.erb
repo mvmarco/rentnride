@@ -1,0 +1,18 @@
+<!-- **** front-part of Car owner post a car **** -->
+
+<div class="container text-center" >
+<h1>Car insertion</h3>
+<p>Enter a location to insert car for rent</p>
+
+<!-- Form generation -->
+<%= form_for(@car) do |f| %>
+  <%= f.label :model %>
+  <%= f.text_field :model %>
+  <%= f.label :pickup_address %>
+  <%= f.text_field :pickup_address %>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+<% end %>
