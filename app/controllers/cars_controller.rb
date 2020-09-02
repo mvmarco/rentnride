@@ -1,7 +1,13 @@
 class CarsController < ApplicationController
-    def new
+
+  def new
     @car = Car.new # car form instantiation
   end
+  
+  def show
+    @car = Car.find(params[:id])
+  end
+  
   def create
     @car = Car.new(car_params)
     @car.user = current_user
