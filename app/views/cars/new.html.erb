@@ -5,14 +5,26 @@
 <p>Enter a location to insert car for rent</p>
 
 <!-- Form generation -->
+<div>
 <%= form_for(@car) do |f| %>
+  <div>
   <%= f.label :model %>
+ </div>
   <%= f.text_field :model %>
+  <div>
   <%= f.label :pickup_address %>
+  </div>
   <%= f.text_field :pickup_address %>
+  <div>
   <%= f.label :price %>
+  </div>
   <%= f.text_field :price %>
+  <div>
   <%= f.label :description %>
+  </div>
   <%= f.text_field :description %>
-  <%= f.submit %>
+  <div>
+  <%= f.submit %></div>
+  </div>
 <% end %>
+</div>
