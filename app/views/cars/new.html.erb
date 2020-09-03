@@ -6,7 +6,7 @@
 
 <!-- Form generation -->
   <div class="new_forms">
-    <%= form_for(@car) do |f| %>
+    <%= simple_form_for(@car) do |f| %>
       <div class="new_form">
         <p><i class="fas fa-car"></i><%= f.label :model %></p>
         <p><%= f.text_field :model %></p>
@@ -25,6 +25,9 @@
       </div>
       <div class="new_form new_btn">
         <p><%= f.submit %></p>
+      </div>
+      <div class="photo-upload">
+        <%= f.input :photo, as: :file %>
       </div>
     <% end %>
   </div>

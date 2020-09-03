@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# WE NEED TO CLEAN THE DATABASE??????
+
 Car.destroy_all
 User.destroy_all
 
@@ -13,4 +16,7 @@ user = User.new(name: "Uros", email: "inbox.si@gmail.com", password: "123456", p
 user.save
 
 
-ferrari250 = Car.create!(model: "Ferrari 250 Testa Rossa", description: "Testa Rossa is Italian for 'red head'. It was so named due to the red hue of the valve covers on the 3.0-liter V-12.", price: 1200, pickup_address: "Barra da Tijuca", user: user)
+file = URI.open('https://i.pinimg.com/originals/d6/1d/b2/d61db22f3b3979029b3cf07e4aa504ea.jpg')
+car = Car.new(model: "Ferrari 250 Testa Rossa", description: "Beautiful italian car.", price: 1200, pickup_address: "Barra da Tijuca", user: user)
+car.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+car.save
