@@ -1,9 +1,13 @@
 <div id="container">
-  <div id="car_pic"> 
-    <%= image_tag("250-testa-rossa.jpg", :width => 500) %> 
+  <div id="car_pic">
+    <%= image_tag("250-testa-rossa.jpg", :width => 500) %>
   </div>
   <h2> <%= @car.model %> </h2>
   <p><strong>Description:</strong> <%= @car.description %> </p>
   <p><strong>Price:</strong> R$ <%= @car.price %> </p>
   <p><strong>Address:</strong> <%= @car.pickup_address %> </p>
 </div>
+
+<%= link_to "Edit", edit_car_path(@car), class: "insert_car" %>
+
+<%= link_to "Delete", car_path(@car), class: "insert_car" %>

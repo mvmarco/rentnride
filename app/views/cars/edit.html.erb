@@ -1,0 +1,26 @@
+<!-- **** front-part of Car owner post a car **** -->
+
+<!-- Form generation -->
+  <div class="new_forms">
+    <%= form_for(@car) do |f| %>
+      <div class="new_form">
+        <p><i class="fas fa-car"></i><%= f.label :model %></p>
+        <p><%= f.text_field :model %></p>
+      </div>
+      <div class="new_form">
+        <p><i class="fas fa-map-marker-alt"></i><%= f.label :pickup_address %></p>
+        <p><%= f.text_field :pickup_address %></p>
+      </div>
+      <div class="new_form">
+        <p><i class="fas fa-dollar-sign"></i><%= f.label :price %></p>
+        <p><%= f.text_field :price %></p>
+      </div>
+      <div class="new_form">
+        <p><i class="fas fa-list-alt"></i><%= f.label :description %></p>
+        <p><%= f.text_field :description %></p>
+      </div>
+      <div class="new_form new_btn">
+        <p><%= f.submit %></p>
+      </div>
+    <% end %>
+  </div>
