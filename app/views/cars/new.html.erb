@@ -1,30 +1,32 @@
 <!-- **** front-part of Car owner post a car **** -->
 
-<div class="container text-center" >
-<h1>Car insertion</h3>
-<p>Enter a location to insert car for rent</p>
+<div class="new_container text-center">
+  <h1>Tell us about your car</h1>
+  <p>Enter the following informations</p>
 
 <!-- Form generation -->
-<div>
-<%= form_for(@car) do |f| %>
-  <div>
-  <%= f.label :model %>
- </div>
-  <%= f.text_field :model %>
-  <div>
-  <%= f.label :pickup_address %>
+  <div class="new_forms">
+    <%= form_for(@car) do |f| %>
+      <div class="new_form">
+        <p><i class="fas fa-car"></i><%= f.label :model %></p>
+        <p><%= f.text_field :model %></p>
+      </div>
+      <div class="new_form">
+        <p><i class="fas fa-map-marker-alt"></i><%= f.label :pickup_address %></p>
+        <p><%= f.text_field :pickup_address %></p>
+      </div>
+      <div class="new_form">
+        <p><i class="fas fa-dollar-sign"></i><%= f.label :price %></p>
+        <p><%= f.text_field :price %></p>
+      </div>
+      <div class="new_form">
+        <p><i class="fas fa-list-alt"></i><%= f.label :description %></p>
+        <p><%= f.text_field :description %></p>
+      </div>
+      <div class="new_form new_btn">
+        <p><%= f.submit %></p>
+      </div>
+    <% end %>
   </div>
-  <%= f.text_field :pickup_address %>
-  <div>
-  <%= f.label :price %>
-  </div>
-  <%= f.text_field :price %>
-  <div>
-  <%= f.label :description %>
-  </div>
-  <%= f.text_field :description %>
-  <div>
-  <%= f.submit %></div>
-  </div>
-<% end %>
+
 </div>
