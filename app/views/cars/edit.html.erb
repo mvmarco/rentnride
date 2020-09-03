@@ -1,12 +1,8 @@
 <!-- **** front-part of Car owner post a car **** -->
 
-<div class="new_container text-center">
-  <h1>Tell us about your car</h1>
-  <p>Enter the following informations</p>
-
 <!-- Form generation -->
   <div class="new_forms">
-    <%= simple_form_for(@car) do |f| %>
+    <%= form_for(@car) do |f| %>
       <div class="new_form">
         <p><i class="fas fa-car"></i><%= f.label :model %></p>
         <p><%= f.text_field :model %></p>
@@ -23,13 +19,8 @@
         <p><i class="fas fa-list-alt"></i><%= f.label :description %></p>
         <p><%= f.text_field :description %></p>
       </div>
-      <div class="photo-upload">
-        <%= f.input :photo, as: :file %>
-      </div>
       <div class="new_form new_btn">
         <p><%= f.submit %></p>
       </div>
     <% end %>
   </div>
-
-</div>
