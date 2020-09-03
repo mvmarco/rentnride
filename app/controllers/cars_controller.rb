@@ -2,7 +2,12 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :authenticate_user!, only: [:new]
   def index
-    @cars = Car.all
+    if params[:search].present?
+    @cars = Car.near(params[:search], 50)
+    else
+      @cars = Car.all
+    end
+
   end
 
   def new
