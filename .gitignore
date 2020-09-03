@@ -43,3 +43,4 @@ yarn-debug.log*
 
 # env environment for cloudinary keys
 echo '.env*'
+.env*
