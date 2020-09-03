@@ -24,11 +24,11 @@
         <p><%= f.text_field :description %></p>
       </div>
       <div class="photo-upload">
-        <%= f.input :photo, as: :file %>
       </div>
-      <div class="new_form new_btn">
-        <p><%= f.submit %></p>
-      </div>
+        <%= f.input :photo, as: :file, class: "insert_car" %>
+      <!-- <div class="insert_car">-->
+      <!-- </div> -->
+        <p><%= f.submit "create", class: "insert_car" %></p>
     <% end %>
   </div>
 
