@@ -1,6 +1,6 @@
 <div id="container">
-  <div id="car_pic">
-    <%= image_tag("250-testa-rossa.jpg", :width => 500) %>
+  <div id="car_pic"> 
+    <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
   <h2> <%= @car.model %> </h2>
   <p><strong>Description:</strong> <%= @car.description %> </p>
