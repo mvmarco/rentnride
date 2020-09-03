@@ -1,5 +1,5 @@
 <div id="container">
-  <div id="car_pic"> 
+  <div id="car_pic">
     <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
   <h2> <%= @car.model %> </h2>
@@ -10,4 +10,8 @@
 
 <%= link_to "Edit", edit_car_path(@car), class: "insert_car" %>
 
-<%= link_to "Delete", car_path(@car), class: "insert_car" %>
+<%= link_to "Delete #{@car.model}",
+            car_path(@car),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+
