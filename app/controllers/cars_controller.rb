@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :authenticate_user!, only: [:new]
   def index
     @cars = Car.all
@@ -16,9 +17,12 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     #@car = Car.new(params[:car])
     @car.user = current_user
-    @car.save!
 
-    redirect_to car_path(@car)
+    if @car.save
+      redirect_to car_path(@car)
+    else
+      render "new"
+    end
   end
 
   def edit
@@ -35,7 +39,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:model, :pickup_address, :price, :description)
+    params.require(:car).permit(:model, :pickup_address, :price, :description, :photo)
   end
 
 end
