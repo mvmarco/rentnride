@@ -23,11 +23,11 @@
         <p><i class="fas fa-list-alt"></i><%= f.label :description %></p>
         <p><%= f.text_field :description %></p>
       </div>
-      <div class="new_form new_btn">
-        <p><%= f.submit %></p>
-      </div>
       <div class="photo-upload">
         <%= f.input :photo, as: :file %>
+      </div>
+      <div class="new_form new_btn">
+        <p><%= f.submit %></p>
       </div>
     <% end %>
   </div>

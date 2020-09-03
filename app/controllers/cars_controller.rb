@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show] 
 
   def new
     @car = Car.new # car form instantiation
@@ -11,9 +12,11 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @car.user = current_user
-    @car.save
-
-    redirect_to car_path(@car)
+    if @car.save
+      redirect_to car_path(@car)
+    else
+      render "new"
+    end
   end
 
   private

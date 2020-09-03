@@ -1,6 +1,6 @@
 <div id="container">
   <div id="car_pic"> 
-    <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
   <h2> <%= @car.model %> </h2>
   <p><strong>Description:</strong> <%= @car.description %> </p>
