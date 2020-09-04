@@ -1,7 +1,5 @@
 class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :authenticate_user!, only: [:new]
-  after_action :verify_authorized
 
   def index
     if params[:search].present?
@@ -38,20 +36,22 @@ class CarsController < ApplicationController
 
   def edit
     @car = Car.find(params[:id])
+    authorize @car
   end
 
   def update
     @car = Car.find(params[:id])
+    authorize @car
     @car.update(car_params)
-    @car.save
     redirect_to car_path(@car)
   end
 
    def destroy
     @car = Car.find(params[:id])
+    authorize @car
     @car.destroy
 
-    redirect_to root_path
+    redirect_to cars_path
   end
 
   private

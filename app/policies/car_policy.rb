@@ -20,7 +20,7 @@ class CarPolicy < ApplicationPolicy
   def edit?
     #user == current_user
     # record == @car
-    user == record.user || user.admin
+    user == record.user
   end
 
   def update?
