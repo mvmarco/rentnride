@@ -6,6 +6,7 @@ class ReservationsController < ApplicationController
     reservation.status = 'Approved'
     days = (reservation.end_date - reservation.start_date).to_i
     reservation.total_price = days*reservation.car.price
+    authorize reservation
     reservation.save
 
     redirect_to reservation_path(reservation)
@@ -13,6 +14,7 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
+    authorize @reservation
   end
 
   private
