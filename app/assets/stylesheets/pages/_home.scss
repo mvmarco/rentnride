@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .banner {
-  height: 629px;
+  height: 78vh;
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -16,11 +16,13 @@
 }
 
 .banner-content p {
-  font-size: 26px;
-  background-color: rgba(102, 102, 241, 0.678);
+  font-size: 33px;
   width: 630px;
   margin: 0 auto;
   margin-bottom: 10px;
+  font-weight: 100;
+  font-family: initial;
+  ;
 }
 
 .banner-content .ap-input-icon svg {

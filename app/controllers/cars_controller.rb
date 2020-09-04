@@ -4,8 +4,13 @@ class CarsController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @cars = Car.all
-    # @cars = policy_scope(Car)
+    if params[:search].present?
+    @cars = Car.near(params[:search], 50)
+    else
+      @cars = Car.all
+       # @cars = policy_scope(Car)
+    end
+
   end
 
   def new
@@ -35,11 +40,18 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
   end
 
+  def update
+    @car = Car.find(params[:id])
+    @car.update(car_params)
+    @car.save
+    redirect_to car_path(@car)
+  end
+
    def destroy
     @car = Car.find(params[:id])
     @car.destroy
 
-    redirect_to cars_paths
+    redirect_to root_path
   end
 
   private

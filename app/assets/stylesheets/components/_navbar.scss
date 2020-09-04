@@ -3,22 +3,21 @@
   margin: 0 auto;
 }
 
-.insert_car {
-  color: white;
-  background-color: rgb(133, 129, 129);
-  border-radius: 5px;
+.insert_car{
+  color: black;
+  background-color: white;;
+  border-radius: 20px;
+  border: 1px solid black;
   text-decoration: none !important;
-  padding: 3px;
-  font-size: 1.15rem;
-  font-weight: bold;
-  margin-left: 500px;
+  padding: 6px 15px;
+  font-size: 16px;
+  font-weight: initial;
 }
 
 .insert_car:hover {
-  color: rgb(133, 129, 129);
+  color: grey;
+  border: 1px solid grey;
   background-color: white;
-  border: 2px solid rgb(133, 129, 129);
-  transition-duration: 0.5s;
 }
 
 .navbar-lewagon {
@@ -42,4 +41,31 @@
   font-family: 'Lexend Peta', sans-serif;
   margin-bottom: 0;
   font-weight: bold;
+}
+.navbar-right {
+  display: flex;
+  justify-content: space-around;
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-actions {
+  color: black;
+  background-color: white;;
+  border-radius: 20px;
+  border: 1px solid black;
+  text-decoration: none !important;
+  padding: 6px 15px;
+  padding: 0 0 0 403px;
+  font-size: 16px;
+  font-weight: initial;
+}
+
+.forms-actions:hover{
+  color: grey;
+  border: 1px solid grey;
+  background-color: white;
 }
