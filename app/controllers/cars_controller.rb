@@ -3,7 +3,8 @@ class CarsController < ApplicationController
 
   def index
     if params[:search].present?
-    @cars = Car.near(params[:search], 50)
+      @city = params[:search]
+      @cars = Car.near(params[:search], 50)
     else
       @cars = Car.all
        # @cars = policy_scope(Car)

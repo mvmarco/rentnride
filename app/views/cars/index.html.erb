@@ -1,5 +1,15 @@
-<ul>
-  <% @cars.each do |car| %>
-    <li><%= link_to car.model, car_path(car) , class: "insert_car" %></li>
-  <% end %>
-</ul>
+<div class="container d-flex">
+    <%if @cars.empty?%>
+      <%= "We are sorry, in #{@city} there are not cars available"%>
+    <%else %>
+        <% @cars.each do |car| %>
+          <div class="cards">
+            <div class="card-category flex-column justify-content-center  m-3 p-3" style="background-image: linear-gradient(rgba(0,0,0,0.3)">
+              <%= cl_image_tag(car.photo.key,
+                    width: 400, height: 300, crop: :fill, class: "card-photo mb-3") %>
+              <%= link_to car.model, car_path(car) , class: "show-button insert_car mt-3" %>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
+</div>
