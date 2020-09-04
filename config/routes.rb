@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :cars
+  resources :cars do
+    resources :reservations, only: :create
+  end
+
+  resources :reservations, only: :show
+
+
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  #to be checked
+
 
   #get "cars", to: "cars#index"
 
