@@ -6,27 +6,31 @@
       <%= image_tag("250-testa-rossa.jpg") %>
     <% end %>
 
-<%# <div class="my-3" id="container">
-  <div id="car_pic"> 
-
-    <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
-
   </div>
   <h2 class="text-center text-justify mt-3"> <%= @car.model %> </h2>
   <p class="text-center"><strong>Description:</strong> <%= @car.description %> </p>
   <p class="text-center"><strong>Price:</strong> R$ <%= @car.price %> </p>
   <p class="text-center"><strong>Address:</strong> <%= @car.pickup_address %> </p>
   <div class="d-flex justify-content-between w-50 mx-auto">
-    <%= link_to "Edit", edit_car_path(@car), class: "insert_car" %>
-    <%= link_to "Delete", car_path(@car), class: "insert_car" %>
-  </div>
+    <% if @car.user == current_user %>
+
+      <%= link_to "Edit", edit_car_path(@car), class: "insert_car" %>
+      <%= link_to "Delete #{@car.model}",
+            car_path(@car),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "insert_car" %>
+    <% else %>
+      <% if current_user.present? %>
+        <%= simple_form_for [@car, Reservation.new] do |form| %>
+          <%= form.input :start_date %>
+          <%= form.input :end_date %>
+          <%= form.submit "Book now" %>
+        <% end %>
+      <% end %>
+    <% end %>
+   </div>
 </div>
 
 
-<%= link_to "Edit", edit_car_path(@car), class: "insert_car" %>
-
-<%= link_to "Delete #{@car.model}",
-            car_path(@car),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
 
