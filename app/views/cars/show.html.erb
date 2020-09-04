@@ -1,8 +1,9 @@
 <div class="my-3" id="container">
+ 
   <div id="car_pic"> 
-
     <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
+  
   <h2 class="text-center text-justify mt-3"> <%= @car.model %> </h2>
   <p class="text-center"><strong>Description:</strong> <%= @car.description %> </p>
   <p class="text-center"><strong>Price:</strong> R$ <%= @car.price %> </p>

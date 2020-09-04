@@ -24,7 +24,12 @@
 }
 
 .new_form i {
-  color: rgb(24, 255, 159);
+  color: black;
+  opacity: 1;
+}
+
+.new_form i:hover {
+  opacity: 0.15;
 }
 
 .new_form label {
