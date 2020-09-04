@@ -10,15 +10,10 @@
   <p class="text-center"><strong>Address:</strong> <%= @car.pickup_address %> </p>
   <div class="d-flex justify-content-between w-50 mx-auto">
     <%= link_to "Edit", edit_car_path(@car), class: "insert_car" %>
-    <%= link_to "Delete", car_path(@car), class: "insert_car" %>
-  </div>
-</div>
-
-
-<%= link_to "Edit", edit_car_path(@car), class: "insert_car" %>
-
-<%= link_to "Delete #{@car.model}",
+    <%= link_to "Delete #{@car.model}",
             car_path(@car),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
-
+            data: { confirm: "Are you sure?" },
+            class: "insert_car" %>
+  </div>
+</div>

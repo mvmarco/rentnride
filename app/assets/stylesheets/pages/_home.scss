@@ -41,3 +41,20 @@
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
 }
+
+.search{
+  color: black;
+  background-color: white;;
+  border-radius: 20px;
+  border: 1px solid black;
+  text-decoration: none !important;
+  padding: 6px 15px;
+  font-size: 16px;
+  font-weight: initial;
+}
+
+.search:hover {
+  color: grey;
+  border: 1px solid grey;
+  background-color: white;
+}

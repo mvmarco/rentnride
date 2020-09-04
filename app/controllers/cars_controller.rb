@@ -3,7 +3,8 @@ class CarsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   def index
     if params[:search].present?
-    @cars = Car.near(params[:search], 50)
+      @city = params[:search]
+      @cars = Car.near(params[:search], 50)
     else
       @cars = Car.all
     end
